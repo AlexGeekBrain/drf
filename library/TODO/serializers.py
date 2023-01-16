@@ -10,6 +10,8 @@ class UserModelSerializer(HyperlinkedModelSerializer):
 
 
 class ProjectModelSerializer(HyperlinkedModelSerializer):
+    users = UserModelSerializer(many=True)
+
     class Meta:
         model = Project
         fields = '__all__'
@@ -22,4 +24,10 @@ class ToDoModelSerializer(HyperlinkedModelSerializer):
         model = ToDo
         fields = '__all__'
 
+    def create(self, validated_data):
+        return User(**validated_data)
 
+    def update(self, instance, validated_data):
+        instance.closed = validated_data.get('closed', instance.closed)
+        instance.save()
+        return instance
