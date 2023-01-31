@@ -5,6 +5,6 @@ from .serializers import UserModelSerializer
 
 
 class UserModelViewSet(ModelViewSet):
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
     queryset = User.objects.all()
     serializer_class = UserModelSerializer
