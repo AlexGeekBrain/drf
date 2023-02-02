@@ -7,6 +7,7 @@ class UserModelSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ['user_name']
+        ref_name = 'UserTodoModelSerializer'
 
 
 class ProjectModelSerializerBase(ModelSerializer):

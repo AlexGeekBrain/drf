@@ -1,4 +1,3 @@
-import django
 from django.test import TestCase
 from rest_framework import status
 from rest_framework.test import APIRequestFactory, force_authenticate, APIClient, APISimpleTestCase, APITestCase
@@ -22,6 +21,12 @@ from mixer.backend.django import mixer
 
 # print(get_response.status_code)
 # print(get_response.json())
+
+
+# response = requests.get('http://127.0.0.1:8000/api/users/')
+# print(response.json())
+# response = requests.get('http://127.0.0.1:8000/api/users/', headers={'Accept': 'application/json; version=2'})
+# print(response.json())
 
 
 class TestUserViewSet(TestCase):
