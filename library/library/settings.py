@@ -42,10 +42,11 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_filters',
     'drf_yasg',
+    'graphene_django',
     # My app
     'TODO',
     'authors',
-    'users'
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -158,4 +159,8 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     # 'PAGE_SIZE': 100,
+}
+
+GRAPHENE = {
+"SCHEMA": "library.schema.schema"
 }
