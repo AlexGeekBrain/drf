@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 const ProjectItem = ({ project, deleteProject }) => {
+    console.log(project)
     return (
         <tr>
             <td>
